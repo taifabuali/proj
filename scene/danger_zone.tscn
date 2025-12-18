@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcqx3wacao4ql"]
+
+[ext_resource type="Script" uid="uid://d1t62gee2or0r" path="res://danger_zone.gd" id="1_21jgr"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_aql6d"]
+
+[node name="dangerZone" type="Area2D"]
+script = ExtResource("1_21jgr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_aql6d")
+debug_color = Color(0.8334644, 0.0013515115, 0.93900466, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

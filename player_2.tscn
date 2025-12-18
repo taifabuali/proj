@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=3 uid="uid://c2t87y1tx1b41"]
+
+[ext_resource type="Script" uid="uid://br2v7fgv5bbl6" path="res://player_2.gd" id="1_8xjnt"]
+[ext_resource type="Texture2D" uid="uid://cgnl57h2uj2pd" path="res://assets/player-grey.png" id="1_wkcja"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xjnt"]
+atlas = ExtResource("1_wkcja")
+region = Rect2(0, 0, 148, 148)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufh5k"]
+atlas = ExtResource("1_wkcja")
+region = Rect2(148, 0, 148, 148)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3sgo"]
+atlas = ExtResource("1_wkcja")
+region = Rect2(0, 0, 148, 148)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryqyf"]
+atlas = ExtResource("1_wkcja")
+region = Rect2(148, 0, 148, 148)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hlws"]
+atlas = ExtResource("1_wkcja")
+region = Rect2(296, 0, 148, 148)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jhxp"]
+atlas = ExtResource("1_wkcja")
+region = Rect2(444, 0, 148, 148)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6iqoo"]
+atlas = ExtResource("1_wkcja")
+region = Rect2(592, 0, 148, 148)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jaoer"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xjnt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufh5k")
+}],
+"loop": true,
+"name": &"idel",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3sgo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryqyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hlws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jhxp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6iqoo")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8lhrm"]
+radius = 29.0
+height = 94.0
+
+[node name="Player2" type="CharacterBody2D"]
+modulate = Color(0.9405462, 0.45026004, 0.5819204, 1)
+script = ExtResource("1_8xjnt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jaoer")
+animation = &"idel"
+autoplay = "idel"
+frame_progress = 0.23615953
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-9, 6)
+shape = SubResource("CapsuleShape2D_8lhrm")

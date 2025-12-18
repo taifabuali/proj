@@ -1,0 +1,55 @@
+[gd_scene load_steps=11 format=3 uid="uid://cwx0g6i4lf8da"]
+
+[ext_resource type="Texture2D" uid="uid://dwhxlaw11uinm" path="res://assets/Treasure Hunters/Treasure Hunters/Pirate Treasure/Sprites/Blue Diamond/01.png" id="1_v81tr"]
+[ext_resource type="Texture2D" uid="uid://cdebgju4sdnw" path="res://assets/Treasure Hunters/Treasure Hunters/Pirate Treasure/Sprites/Blue Diamond/02.png" id="2_hqxvl"]
+[ext_resource type="Texture2D" uid="uid://cu35knhtu8all" path="res://assets/Treasure Hunters/Treasure Hunters/Pirate Treasure/Sprites/Blue Diamond/03.png" id="3_1fa8b"]
+[ext_resource type="Texture2D" uid="uid://jjg1a4oyvats" path="res://assets/Treasure Hunters/Treasure Hunters/Pirate Treasure/Sprites/Blue Diamond/04.png" id="4_bwa4a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wq2nr"]
+atlas = ExtResource("1_v81tr")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvj7v"]
+atlas = ExtResource("2_hqxvl")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcwjb"]
+atlas = ExtResource("3_1fa8b")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ga0s1"]
+atlas = ExtResource("4_bwa4a")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8x0f0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wq2nr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvj7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcwjb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ga0s1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xy711"]
+radius = 7.0
+
+[node name="Dimod" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8x0f0")
+autoplay = "default"
+frame_progress = 0.19987358
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xy711")

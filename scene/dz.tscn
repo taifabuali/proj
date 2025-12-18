@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7yja2b8tbkwb"]
+
+[ext_resource type="Script" uid="uid://yifwea1wx441" path="res://dz.gd" id="1_ps2rn"]
+[ext_resource type="Texture2D" uid="uid://yxs4t16gdjk2" path="res://assets/tiles-b.png" id="2_s4pla"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_45ukn"]
+
+[node name="DZ" type="Area2D"]
+script = ExtResource("1_ps2rn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_s4pla")
+region_enabled = true
+region_rect = Rect2(138.10815, 3.1300201, 367.84, 49.516922)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_45ukn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

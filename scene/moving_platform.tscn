@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmko4dfj5q1hh"]
+
+[ext_resource type="Texture2D" uid="uid://d2uesk6kurr2a" path="res://assets/tiles-threadbare.png" id="1_lenne"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8w8fh"]
+size = Vector2(250, 73)
+
+[node name="Moving Platform" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lenne")
+region_enabled = true
+region_rect = Rect2(898.9441, 259.2107, 247.93591, 125.38937)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -26.5)
+shape = SubResource("RectangleShape2D_8w8fh")
+one_way_collision = true
